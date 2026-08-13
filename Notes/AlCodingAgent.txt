@@ -1,0 +1,42 @@
+Steps
+
+Explore -> plan -> code -> Commit
+
+Always provide more descriptive and clear prompt
+
+Manage your context. keep it clear to reduce tokens
+
+Create .md files to help agents (md files can be agents.md/skills.md etc)
+	This md file should have architecture details and business logic
+	Use @filename for files.
+	Write a lean .md agent actually follows, package repeated procedures as skills, pick the right permission mode for each job, 	and enforce non-negotiable rules with hooks.
+
+Tools and topics
+	Context window
+	Agents -> main agent
+	SubAgents -> subwindow agent will not include his context into main context
+	Tools -> tools to run
+	MCP
+```
+	Skills -> additional instructions -> loads automatically
+	Commands -> stored command/prompts on local -> should load manually
+	Hooks -> runs before and after prompt/tool call(you can put this instruction in agents but sometimes it will not work)
+		use to stop actions. Instructions can fail
+	Plugins -> can run using hooks(these are like packages)
+```
+	Routines -> /schedule
+	Headless -> can run for hours and build apps
+
+
+Classifier in claude used classification to identify security issues
+
+Tips
+	Ask Agent for best promtes
+	Long prompts will going into a .md file you can use this .md for long running process to build app(something like /goal in Claude)
+	Create Worktree in project folder. create a .tree folder. ignore from tracking
+	use agent for all manual task. like merge conflicts. merging worktree.
+	Use MCPs to connect to services and send info to agent: Example workflow Jira MCP(reads the bug) -> git  MCP (pushes the code)
+	Workflow can have anything. create payges with documents use MCPs for agents to read project and take actions
+
+Claude Advanced:
+	Claude can ne integrated to GitHub. I you create a issue on GitHub issue, claude will read the story and finish task
