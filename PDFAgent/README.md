@@ -5,7 +5,7 @@ A minimal Python agent scaffold with a tool registry, conversation memory, and a
 ## Quick start
 
 ```bash
-python -m venv .venv
+python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -e .
 agent
